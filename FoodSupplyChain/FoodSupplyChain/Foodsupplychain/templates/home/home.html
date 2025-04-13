@@ -1,0 +1,214 @@
+<!--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<!-- Head -->
+<head>
+	 <base href="/static/home/">
+<title>Food Supply Chain</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="keywords" content="Food Cadre a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+
+<!-- light-box -->
+	<link rel="stylesheet" href="css/lightbox.css">
+<!-- //light-box -->
+<!--FlexSlider-->
+	<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/font-awesome.min.css" />
+	<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'><!--web font-->
+	<link href="//fonts.googleapis.com/css?family=Amita:400,700" rel="stylesheet"><!--web font-->
+    <style>
+		.active a {
+    color: red; /* Red color for active link */
+}
+	</style>
+</head>
+<script>
+  {% for i in messages %}
+   alert('{{ i }} ')
+  {% endfor %}
+  </script>
+<!-- Body -->
+<body>
+<!-- banner -->
+<div class="w3l-banner" >
+	<div class="header">
+		<!-- Top-Bar -->
+		<div class="top-bar">
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse" id="myNavbar">
+						<ul class="nav navbar-nav navbar-right" >
+							<li class="active"><a href="/" >HOME</a></li>
+
+							<li><a href="/re_register/" >RESTAURANTS</a></li>
+							<li><a href="/su_register/" >SUSTAINABILITY</a></li>
+
+							<li><a href="/dl_register/" >DELIVERY</a></li>
+
+							<li><a href="/admin_login/" >ADMIN</a></li>
+
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+		<div class="logo">
+			<a href="/">Food Supply Chain</a>
+		</div>
+		<!-- //Top-Bar -->
+		<!-- //Header -->
+		<div class="container">
+			<div class="flexslider-info">
+				<section class="slider">
+					<div class="flexslider">
+						<ul class="slides">
+							<li>
+							<div class="w3l-info">
+								<h1>Welcome to our warehouse </h1>
+
+								<div class="social-media">
+									<ul>
+
+									</ul>
+								</div>
+							</div>
+							</li>
+							<li>
+								<div class="w3l-info">
+									<h3>Welcome to our warehouse Food Services</h3>
+
+									<div class="social-media">
+										<ul>
+
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="w3l-info">
+									<h3>Welcome to our warehouse</h3>
+
+									<div class="social-media">
+										<ul>
+
+										</ul>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //banner -->
+<!-- about -->
+<section class="about-us" id="about-us">
+		<div class="container">
+			<div class="col-md-5 about-left">
+				<h2>About Us</h2>
+				<p>At our warehouse, we streamline the food supply chain by sourcing sustainable, high-quality ingredients for restaurants. Utilizing advanced technology, we ensure timely and efficient delivery while minimizing environmental impact. Committed to excellence and sustainability, we support restaurants in achieving their culinary and eco-friendly goals. </p>
+				<div class="clearfix"></div>
+			</div>
+			
+			<div class="col-md-6 about-img" >
+				<img src="images/burger.jpg" alt="" />
+				<div class="clearfix"></div>
+			</div>
+			<div class="col-md-6 about-img">
+				<img src="images/food.jpg" alt="" />
+				<div class="clearfix"></div>
+			</div>
+			<div class="col-md-5 about-right">
+				<p>Our warehouse is the backbone of efficient and sustainable food supply for restaurants, providing high-quality products sourced from eco-friendly partners. We utilize advanced logistics to ensure timely and safe delivery, minimizing waste and promoting environmental responsibility. Committed to excellence, we support the culinary industry by delivering fresh and diverse ingredients tailored to our clients' needs.</p>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+</section>
+<!-- //about -->
+<!-- services -->
+<!-- //Contact -->
+<!-- footer -->
+
+<div class="wthree_copy_right">
+	<div class="container">
+		<p>Comprehensive Restaurant and Food Supply Chain Solutions for Efficient Operations and Sustainability</p>
+			
+	</div>
+</div>
+<!-- //copyright -->
+
+
+<!-- Default-JavaScript-File -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- //Default-JavaScript-File -->
+
+
+	<script defer src="js/jquery.flexslider.js"></script>
+	
+<!--Start-slider-script-->
+		<script type="text/javascript">
+		
+		$(window).load(function(){
+		  $('.flexslider').flexslider({
+			animation: "slide",
+			start: function(slider){
+			  $('body').removeClass('loading');
+			}
+		  });
+		});
+	  </script>
+<!--End-slider-script-->
+<script src="js/SmoothScroll.min.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+
+	<script type="text/javascript" src="js/move-top.js"></script>
+	<script type="text/javascript" src="js/easing.js"></script>
+<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+<!-- //here ends scrolling icon -->
+</body>
+<!-- //Body -->
+</html>

@@ -1,0 +1,366 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <base href="/static/admin/home/">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>ADMIN</title>
+
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="assets/css/style-starter.css">
+  <!-- web fonts -->
+  <link href="//fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
+  <!-- /web fonts -->
+      <style>
+    .move-top {
+    position: fixed; /* Fixed position to stay in place */
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+    background-color: #333; /* Background color */
+    border-radius: 50%; /* Round shape */
+    padding: 10px; /* Padding around the icon */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for better visibility */
+
+}
+     .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="number"],
+        .form-group input[type="file"],
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .form-group input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .form-group input[type="submit"] {
+            background-color: #ea3a60;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left:90px;
+        }
+        .form-group input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .form-group .add-soil {
+            margin-top: 10px;
+            background-color: #28a745;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+    </style>
+
+</head>
+<script>
+  {% for i in messages %}
+   alert('{{ i }} ')
+  {% endfor %}
+  </script>
+
+<body>
+  <!-- header -->
+  <header class="w3l-header">
+    <div class="hero-header-11">
+      <div class="hero-header-11-content">
+        <div class="container">
+          <nav class="navbar navbar-expand-xl navbar-light py-sm-2 py-1 px-0">
+            <a class="navbar-brand editContent" href="/admin_home/">ADMINISTRATOR</a>
+            <!-- if logo is image enable this
+				<a class="navbar-brand" href="#index.html">
+						<img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
+				</a> -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon fa fa-bars"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item ">
+                  <a class="nav-link" href="/admin_home/">HOME <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="/upload_stock/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    MANAGE LOG
+
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item " href="/restaurants_details/">RESTAURANTS</a>
+                    <a class="dropdown-item " href="/delivery_details/">DELIVERY</a>
+                    <a class="dropdown-item " href="/sustainability_details/">SUSTAINABILITY</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="/upload_stock/">UPLOAD STOCK</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/warehouse_stock/">WAREHOUSE</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="/upload_stock/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    REPORTS
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                    <a class="dropdown-item" href="/sus_report/">SUSTAIN REPORT</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/admin_logout/">LOGOUT</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- //header -->
+  <!--  Main banner section -->
+  <section class="w3l-main-banner">
+    <div class="companies20-content">
+      <div class="companies-wrapper">
+        <div class="item">
+
+
+          <li>
+            <div class="slider-info banner-view" >
+            <div class="form-container">
+    <h2>Upload Food Item Details</h2>
+    <form id="requirements-form" action="/upload_stock/" method="post" enctype="multipart/form-data" autocomplete="off">
+        {% csrf_token %}
+       <div class="form-group">
+    <label for="food-item">Food Item:</label>
+    <select id="food-item" name="food_item" required aria-label="Food Item">
+  <option value="" disabled selected>Select a food item</option>
+    <option value="Pizza">Pizza</option>
+    <option value="Burger">Burger</option>
+    <option value="Sushi">Sushi</option>
+    <option value="Sandwich">Sandwich</option>
+    <option value="Tacos">Tacos</option>
+    <option value="Chicken Wings">Chicken Wings</option>
+    <option value="Frozen Pizza">Frozen Pizza</option>
+    <option value="Cheeseburger">Cheeseburger</option>
+    <option value="Fried Chicken">Fried Chicken</option>
+    <option value="Fish And Chips">Fish And Chips</option>
+    <option value="Falafel">Falafel</option>
+    <option value="Samosa">Samosa</option>
+    <option value="Pre-Packaged Salad">Pre-Packaged Salad</option>
+    <option value="Veggie Burger">Veggie Burger</option>
+    <option value="Frozen Burrito">Frozen Burrito</option>
+    <option value="Chicken Nuggets">Chicken Nuggets</option>
+    <option value="Hot Dog">Hot Dog</option>
+    <option value="Packaged Mac And_Cheese">Packaged Mac And Cheese</option>
+    <option value="Frozen Lasagna">Frozen Lasagna</option>
+    <option value="Packaged Sushi Rolls">Packaged Sushi Rolls</option>
+    <option value="Ready-To-Eat Chili">Ready-To-Eat Chili</option>
+    <option value="Packaged Pancakes">Packaged Pancakes</option>
+    <option value="Microwaveable Pizza">Microwaveable Pizza</option>
+    <option value="Instant Noodles">Instant Noodles</option>
+    <option value="Pre-Cooked Meatballs">Pre-Cooked Meatballs</option>
+    <option value="Frozen Burrito">Frozen Burrito</option>
+    <option value="Packaged Potato Wedges">Packaged Potato Wedges</option>
+    <option value="Frozen Fried Rice">Frozen Fried Rice</option>
+    <option value="Packaged Waffles">Packaged Waffles</option>
+    <option value="Pre-Cooked_Sausages">Pre-Cooked Sausages</option>
+    <option value="Frozen Chicken Tenders">Frozen Chicken Tenders</option>
+    <option value="Instant Oatmeal">Instant Oatmeal</option>
+    <option value="Pre-Packaged Quesadillas">Pre-Packaged Quesadillas</option>
+    <option value="Ready-To-Eat_Soup">Ready-To-Eat Soup</option>
+    <option value="Microwaveable Pasta">Microwaveable Pasta</option>
+    <option value="Packaged Burrito Bowl">Packaged Burrito Bowl</option>
+    <option value="Frozen Meatloaf">Frozen Meatloaf</option>
+    <option value="Ready Made Curry">Ready-Made Curry</option>
+    <option value="Packaged Dumplings">Packaged Dumplings</option>
+    <option value="Frozen Breakfast Sandwich">Frozen Breakfast Sandwich</option>
+    <option value="Instant Ramen">Instant Ramen</option>
+    <option value="Packaged Chicken Alfredo">Packaged Chicken Alfredo</option>
+    <option value="Frozen Veggie Pizza">Frozen Veggie Pizza</option>
+    <option value="Pre-Cooked Pancakes">Pre-Cooked Pancakes</option>
+    <option value="Microwaveable Burritos">Microwaveable Burritos</option>
+    <option value="Frozen Chicken Wings">Frozen Chicken Wings</option>
+    <option value="Packaged Hot Wings">Packaged Hot Wings</option>
+    <option value="Pasta">Pasta</option>
+    <option value="Tacos">Tacos</option>
+    <option value="Salad">Salad</option>
+</select>
+</div>
+        <div class="form-group">
+            <label for="food-price">Price(Rs):</label>
+            <input type="text" id="food-price" name="food_price" required>
+            <div id="price-error" class="error-message">Please enter a positive integer for the price.</div>
+        </div>
+        <div class="form-group">
+            <label for="food-image">Image:</label>
+            <input type="file" id="food-image" name="food_image" accept="image/*" required>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Upload FoodItems">
+
+
+        </div>
+
+
+    </form>
+                 <a href="/"><input type="submit" value="Back" style="background-color: #ea3a60;color: #fff;border: none;padding: 10px 20px; border-radius: 4px;  cursor: pointer; font-size: 16px;margin-left:90px;width:175px"></a>
+</div>
+              <div class="banner-info container">
+
+
+<!--                <h3 class="banner-text"><small>Hello, I’m</small><br>-->
+<!--                  Christopher-->
+<!--                </h3>-->
+<!--                <p class="my-4 mb-5">UI/UX Designer</p><br>-->
+<!--                <a href="#gallery" class="btn btn-primary theme-button mr-3">My Work</a>-->
+<!--                <a href="#about.html" class="btn btn-outline-primary theme-button">Hire Me</a>-->
+              </div>
+            </div>
+          </li>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--  //Main banner section -->
+  <!--  About section -->
+     <!-- /move top -->
+
+
+  <!-- Footer -->
+
+  <!-- jQuery and Bootstrap JS -->
+  <script src="assets/js/jquery-3.4.1.slim.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+
+  <!-- Template JavaScript -->
+  <script src="assets/js/jquery.magnific-popup.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.popup-with-zoom-anim').magnificPopup({
+        type: 'inline',
+
+        fixedContentPos: false,
+        fixedBgPos: true,
+
+        overflowY: 'auto',
+
+        closeBtnInside: true,
+        preloader: false,
+
+        midClick: true,
+        removalDelay: 300,
+        mainClass: 'my-mfp-zoom-in'
+      });
+
+      $('.popup-with-move-anim').magnificPopup({
+        type: 'inline',
+
+        fixedContentPos: false,
+        fixedBgPos: true,
+
+        overflowY: 'auto',
+
+        closeBtnInside: true,
+        preloader: false,
+
+        midClick: true,
+        removalDelay: 300,
+        mainClass: 'my-mfp-slide-bottom'
+      });
+    });
+  </script>
+
+  <!-- disable body scroll which navbar is in active -->
+  <script>
+    $(function () {
+      $('.navbar-toggler').click(function () {
+        $('body').toggleClass('noscroll');
+      })
+    });
+  </script>
+  <!-- disable body scroll which navbar is in active -->
+
+
+  <script src="assets/js/smartphoto.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const sm = new SmartPhoto(".js-img-viwer", {
+        showAnimation: false
+      });
+      // sm.destroy();
+    });
+  </script>
+ <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    const priceInput = document.getElementById('food-price');
+    const errorDiv = document.getElementById('price-error');
+
+    priceInput.addEventListener('input', function () {
+        const value = priceInput.value;
+        // Check if value is a positive integer
+        if (/^\d+$/.test(value) && parseInt(value) > 0) {
+            errorDiv.style.display = 'none'; // Hide error message
+        } else {
+            errorDiv.style.display = 'block'; // Show error message
+        }
+    });
+
+    document.getElementById('food-form').addEventListener('submit', function (event) {
+        const value = priceInput.value;
+        // Prevent form submission if value is not valid
+        if (!/^\d+$/.test(value) || parseInt(value) <= 0) {
+            event.preventDefault(); // Stop form submission
+            errorDiv.style.display = 'block'; // Show error message
+        }
+    });
+});
+    </script>
+
+
+</body>
+
+</html>

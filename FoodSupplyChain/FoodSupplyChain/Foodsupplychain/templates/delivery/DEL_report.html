@@ -1,0 +1,542 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+<!doctype html>
+{% load static %}
+<html lang="zxx">
+
+<head>
+	<!-- Required meta tags -->
+	<base href="/static/delivery/home/">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>DELIVERY</title>
+	<!-- Template CSS -->
+	<link rel="stylesheet" href="assets/css/style-starter.css">
+	<!-- Template CSS -->
+	<link href="//fonts.googleapis.com/css?family=Noto+Sans+JP:100,300,400,500,700&display=swap" rel="stylesheet">
+	<!-- Template CSS -->
+<style>
+.banner-content {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Fill the viewport height */
+  overflow: hidden;
+  margin: 0;
+  background-position: center;
+  background-size: cover; /* Ensures the images cover the banner area */
+}
+
+#demo-1 {
+  height: 100%;
+  background-size: cover; /* Ensures the images cover the banner area */
+  background-position: center; /* Centers the images */
+}
+
+.demo-inner-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Fill the container height */
+  text-align: center;
+  padding: 30px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent overlay */
+  border-radius: 8px;
+}
+
+.banner-infhny {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.banner-infhny h1, .banner-infhny p {
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+.banner-infhny a {
+  display: inline-block;
+
+  background-color: #66B2FF;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.banner-infhny a:hover {
+  background-color: #004c99;
+}
+
+.table-container {
+    max-height: 400px;
+    overflow-y: auto;
+    margin: 0 auto;
+    width: 100%;
+    background-color: #f8f9fa;
+}
+
+.table-striped {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    background-color: #f8f9fa;
+    border-collapse: collapse;
+}
+
+.table-striped th,
+.table-striped td {
+    padding: 0.92rem;
+    vertical-align: middle;
+    border-top: 1px solid #dee2e6;
+}
+
+.table-striped th {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+}
+
+.table-striped td {
+    text-align: center;
+    background-color: white;
+    color: black;
+}
+.button-17 {
+    background-color: #007bff; /* Blue color */
+    color: #fff; /* White text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-17:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Style for Got button */
+.button-17 {
+    background-color: #007bff; /* Blue color */
+    color: #fff; /* White text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    /* Removed hover effect */
+}
+
+
+
+/* Style for Decrypt button */
+.ui-btn {
+    background-color: #dc3545; /* Red color */
+    color: #fff; /* White text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.ui-btn:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+/* Style for input field */
+.input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 150px; /* Adjust the width as needed */
+    margin-right: 10px; /* Space between input and button */
+}
+           	.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Space between buttons */
+}
+
+.custom-button {
+    padding: 4px 8px; /* Smaller button size */
+    border: none;
+    border-radius: 5px; /* Slightly rounded corners */
+    font-size: 12px; /* Smaller font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.custom-button.approve {
+    background-color: #007bff; /* Blue color */
+    color: #fff;
+}
+
+.custom-button.reject {
+    background-color: #dc3545; /* Red color */
+    color: #fff;
+}
+
+.custom-button.approved {
+    background-color: #6c757d; /* Grey color */
+    color: #fff;
+    cursor: default;
+
+
+}
+
+.custom-button.rejected {
+    background-color: #6c757d; /* Grey color */
+    color: #fff;
+    cursor: default;
+}
+
+.custom-button:hover:not(.approved):not(.rejected) {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+.action-buttons {
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+    align-items: center; /* Center the button vertically */
+    height: 100%; /* Make sure it takes up the full height of the cell */
+}
+.button-17 {
+    background-color: #007bff; /* Blue color */
+    color: #fff; /* White text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    /* Removed hover effect */
+}
+
+.button-17.got {
+    background-color: #28a745; /* Green color */
+    color: #fff; /* White text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    /* Removed hover effect */
+}
+
+.ui-btn {
+    background-color: #dc3545; /* Red color */
+    color: #fff; /* White text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    /* Removed hover effect */
+}
+
+.custom-button {
+    padding: 4px 8px; /* Smaller button size */
+    border: none;
+    border-radius: 5px; /* Slightly rounded corners */
+    font-size: 12px; /* Smaller font size */
+    cursor: pointer;
+    transition: none; /* No transition effect */
+}
+
+.custom-button.approve {
+    background-color: #007bff; /* Blue color */
+    color: #fff;
+}
+
+.custom-button.reject {
+    background-color: #dc3545; /* Red color */
+    color: #fff;
+}
+
+.custom-button.approved,
+.custom-button.rejected {
+    background-color: #6c757d; /* Grey color */
+    color: #fff;
+    cursor: default;
+}
+
+</style>
+
+
+</head>
+<script>
+  {% for i in messages %}
+   alert('{{ i }} ')
+  {% endfor %}
+  </script>
+
+
+<body>
+
+	<!--w3l-header-->
+	<header class="w3l-header-nav">
+		<!--/nav-->
+		<nav class="navbar navbar-expand-lg navbar-light px-lg-0 py-0 px-3 stroke">
+			<div class="container">
+				<h1><a class="navbar-brand" href="/dl_home/">DELIVER<span>Y</span></a></h1>
+				<!-- if logo is image enable this
+						<a class="navbar-brand" href="#index.html">
+							<img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
+						</a> -->
+				<button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+					data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="fa icon-expand fa-bars"></span>
+					<span class="fa icon-close fa-times"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item ">
+							<a class="nav-link" href="/dl_home/">HOME</a>
+						</li>
+						<li class="nav-item active">
+						<a class="nav-link" href="{% url 'DEl_report' %}">SUSTAIN REPORT</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/delivery_process/">DELIVERY PROCESS</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="/dl_logout/">LOGOUT</a>
+						</li>
+					</ul>
+					<!--/search-right-->
+
+						<!-- /search popup -->
+					</div>
+					<!--//search-right-->
+
+				</div>
+			</div>
+		</nav>
+		<!--//nav-->
+	</header>
+	<!-- //w3l-header -->
+	<!--banner-slider-->
+	<!-- main-slider -->
+	<section class="w3l-main-slider" id="home">
+		<div class="banner-content">
+
+			<div id="demo-1"
+				data-zs-src='["assets/images/1.jpg", "assets/images/2.jpg","assets/images/3.jpg", "assets/images/4.jpg"]'
+				data-zs-overlay="dots">
+
+				<div class="demo-inner-content">
+					<div class="container">
+
+
+						<div class="banner-infhny">
+
+							 <div class="banner-info" style="margin-top:-90px;">
+								  <div class="container" >
+
+    <h2 style="color:white;margin-left:250px;">SUSTAINABILITY REPORT</h2><br><br>
+
+    <div class="table-container">
+        <table class="table-striped">
+            <thead>
+                <tr>
+                     <th>CLIENT ID</th>
+                     <th>ANALYZED DETAILS</th>
+
+
+
+
+                    <th  class="management-actions-header">REPORT</th>
+
+
+
+
+                </tr>
+            </thead>
+           <tbody>
+    {% for i in client_ids %}
+        <tr>
+          <td>{{ i }}</td>
+           <td><a href="/Su_report/"><button class="custom-button approve">Analyzed Details</button></a></td>
+
+
+            <td>
+
+                <div class="action-buttons">
+
+                        <a href="{{ view.f_report.url }}" target="_blank">
+                            <button class="custom-button approve">VIEW REPORT</button>
+                        </a>
+
+                </div>
+
+            </td>
+        </tr>
+    {% endfor %}
+</tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- /main-slider -->
+	<!-- //banner-slider-->
+	<!-- /specification-6-->
+
+	<!-- //specification-6-->
+
+	<!--/video-6-->
+
+
+	<!--/blog-grids-home-->
+
+	<!-- /w3l-content-with-photo-4-->
+	<!-- footer-66 -->
+	<footer class="w3l-footer-66">
+		<section class="footer-inner-main">
+
+
+
+			<!-- copyright -->
+			<!-- move top -->
+			<button onclick="topFunction()" id="movetop" title="Go to top">
+				<span class="fa fa-arrow-up" aria-hidden="true"></span>
+			</button>
+			<script>
+				// When the user scrolls down 20px from the top of the document, show the button
+				window.onscroll = function () {
+					scrollFunction()
+				};
+
+				function scrollFunction() {
+					if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+						document.getElementById("movetop").style.display = "block";
+					} else {
+						document.getElementById("movetop").style.display = "none";
+					}
+				}
+
+				// When the user clicks on the button, scroll to the top of the document
+				function topFunction() {
+					document.body.scrollTop = 0;
+					document.documentElement.scrollTop = 0;
+				}
+			</script>
+			<!-- /move top -->
+
+		</section>
+	</footer>
+	<!--//footer-66 -->
+</body>
+
+</html>
+
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+<!-- disable body scroll which navbar is in active -->
+
+<!--//-->
+<script>
+	$(function () {
+		$('.navbar-toggler').click(function () {
+			$('body').toggleClass('noscroll');
+		})
+	});
+</script>
+<!--/scroll-down-JS-->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/modernizr-2.6.2.min.js"></script>
+<script src="assets/js/jquery.zoomslider.min.js"></script>
+<!-- stats -->
+<script src="assets/js/jquery.waypoints.min.js"></script>
+<script src="assets/js/jquery.countup.js"></script>
+<script>
+	$('.counter').countUp();
+</script>
+<!-- //stats -->
+<!--pop-up-box-->
+
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script>
+	$(document).ready(function () {
+		$('.popup-with-zoom-anim').magnificPopup({
+			type: 'inline',
+
+			fixedContentPos: false,
+			fixedBgPos: true,
+
+			overflowY: 'auto',
+
+			closeBtnInside: true,
+			preloader: false,
+
+			midClick: true,
+			removalDelay: 300,
+			mainClass: 'my-mfp-zoom-in'
+		});
+
+		$('.popup-with-move-anim').magnificPopup({
+			type: 'inline',
+
+			fixedContentPos: false,
+			fixedBgPos: true,
+
+			overflowY: 'auto',
+
+			closeBtnInside: true,
+			preloader: false,
+
+			midClick: true,
+			removalDelay: 300,
+			mainClass: 'my-mfp-slide-bottom'
+		});
+	});
+</script>
+
+<!--//pop-up-box-->
+<!-- for blog carousel slider -->
+<script src="assets/js/owl.carousel1.js"></script>
+<script>
+	$(document).ready(function () {
+		$("#owl-demo1").owlCarousel({
+			loop: true,
+			margin:20,
+			responsiveClass: true,
+			responsive: {
+				0: {
+					items:1,
+					nav: true
+				},
+				600: {
+					items: 2,
+					nav: false
+				},
+				1000: {
+					items: 3,
+					nav: true,
+					loop: false
+				}
+			}
+		})
+	})
+</script>
+<!-- //script -->
+
+<script src="assets/js/bootstrap.min.js"></script>

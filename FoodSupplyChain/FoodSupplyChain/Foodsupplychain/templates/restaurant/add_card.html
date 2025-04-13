@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warehouse Stock Details</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            overflow: hidden; /* Prevent scrollbars */
+        }
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1; /* Place video behind content */
+        }
+        #background-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: auto;
+            min-height: 100%;
+            min-width: 100%;
+            transform: translate(-50%, -50%);
+            object-fit: cover; /* Cover the container while keeping aspect ratio */
+        }
+        .container {
+            position: relative;
+            z-index: 1; /* Ensure content is above the video */
+            text-align: center;
+            max-width: 100%;
+            padding: 20px;
+        }
+        h2 {
+            color: black;
+            margin-left: 50px;
+        }
+        .table-container {
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        .table-striped {
+            background-color: #f8f9fa;
+            width: 100%;
+            margin-bottom: 1rem;
+            border-collapse: collapse;
+        }
+        .table-striped th,
+        .table-striped td {
+            padding: 0.75rem;
+            vertical-align: middle;
+            border-top: 1px solid #dee2e6;
+        }
+        .table-striped th {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+        }
+        .table-striped td {
+            text-align: center;
+            background-color: white;
+        }
+        .table-striped input[type="number"] {
+            width: 80px;
+            text-align: center;
+        }
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .custom-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .custom-button.check-out {
+            background-color: #28a745;
+            color: #fff;
+        }
+        .custom-button.check-out:hover {
+            background-color: #218838;
+        }
+        .custom-button.back {
+            background-color: #333;
+            color: #fff;
+        }
+        .custom-button.back:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop id="background-video">
+            <source src="{% static 'restaurant/home/video/video.mp4' %}" type="video/mp4">
+            <source src="{% static 'restaurant/home/video/video.webm' %}" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="container">
+        <h2 style="color:white;">WAREHOUSE STOCK DETAILS</h2>
+        <br>
+        <div class="table-container">
+            <table class="table-striped">
+                <thead>
+                    <tr>
+                        <th>ITEM ID</th>
+                        <th>FOOD ITEM NAME</th>
+                        <th>FOOD PRICE (Rs)</th>
+                        <th>QUANTITY</th>
+                        <th>TOTAL PRICE</th>
+                        <th>FOOD IMAGE</th>
+                        <th>DELETE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in data %}
+                    <tr>
+                        <td style="color:black;">{{ item.Br_id }}</td>
+                        <td style="color:black;">{{ item.food_name }}</td>
+                        <td style="color:black;">{{ item.price }}</td>
+                        <td>
+                            <form method="POST" action="{% url 'add_card' %}">
+                                {% csrf_token %}
+                                <input type="number" name="quantity_{{ item.Br_id }}" value="1" min="1" />
+                                <button type="submit" name="submit_quantity" value="{{ item.Br_id }}">Submit</button>
+                            </form>
+                        </td>
+                        <td style="color:black;">{{ item.Total_price }}</td>
+                        <td>
+                            {% if item.image %}
+                            <a href="{{ item.image.url }}">
+                                <img src="{{ item.image.url }}" alt="Food Image" style="height:100px;width:100px;">
+                            </a>
+                            {% else %}
+                            No image available
+                            {% endif %}
+                        </td>
+                        <td>
+                            <form method="POST" action="{% url 'delete_item' item.Br_id %}">
+                                {% csrf_token %}
+                                <button style="align-item:center;background-color:#fc2f0f;color:white;padding:9px 18px;" type="submit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+       <div class="action-buttons">
+    {% if not pay %}
+        <a href="/process_payment/">
+            <button class="custom-button check-out">Check Out</button>
+        </a>
+    {% else %}
+        <button class="custom-button check-out">Paid</button>
+    {% endif %}
+    <a href="/re_home/">
+        <button class="custom-button back">Back</button>
+    </a>
+</div>
+
+    </div>
+
+    <script>
+        {% for i in messages %}
+            alert('{{ i }}')
+        {% endfor %}
+
+        function updatePrice(itemId, pricePerUnit) {
+            const quantityInput = document.querySelector(`input[name="quantity_${itemId}"]`);
+            const quantity = parseInt(quantityInput.value);
+            const totalPrice = quantity * pricePerUnit;
+            const priceDisplay = document.getElementById(`price_${itemId}`);
+            priceDisplay.textContent = totalPrice.toFixed(2);
+        }
+    </script>
+</body>
+</html>

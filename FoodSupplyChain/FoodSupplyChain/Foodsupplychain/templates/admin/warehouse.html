@@ -1,0 +1,311 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <base href="/static/admin/home/">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>ADMIN</title>
+
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="assets/css/style-starter.css">
+  <!-- web fonts -->
+  <link href="//fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
+  <!-- /web fonts -->
+      <style>
+    .move-top {
+    position: fixed; /* Fixed position to stay in place */
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+    background-color: #333; /* Background color */
+    border-radius: 50%; /* Round shape */
+    padding: 10px; /* Padding around the icon */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for better visibility */
+
+}
+        <style>
+        /* Additional styles can be added here */
+        .table-striped {
+            background-color: #f8f9fa;
+            width: 100%;
+            margin-bottom: 1rem;
+            margin_left:300px;
+        }
+
+        .table-striped th,
+        .table-striped td {
+            padding: 0.75rem;
+            vertical-align: middle; /* Adjusted vertical alignment */
+            border-top: 1px solid #dee2e6;
+        }
+
+        .table-striped th {
+            background-color: #ea3a60;
+            color: #fff;
+            text-align: center;
+        }
+
+        .table-striped td {
+            text-align: center;
+             background-color:white;
+        }
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Space between buttons */
+}
+
+.custom-button {
+    padding: 4px 8px; /* Smaller button size */
+    border: none;
+    border-radius: 5px; /* Slightly rounded corners */
+    font-size: 12px; /* Smaller font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.custom-button.approve {
+    background-color: #007bff; /* Blue color */
+    color: #fff;
+}
+
+.custom-button.reject {
+    background-color: #dc3545; /* Red color */
+    color: #fff;
+}
+
+.custom-button.approved {
+    background-color: #6c757d; /* Grey color */
+    color: #fff;
+    cursor: default;
+
+
+}
+
+.custom-button.rejected {
+    background-color: #6c757d; /* Grey color */
+    color: #fff;
+    cursor: default;
+}
+
+.custom-button:hover:not(.approved):not(.rejected) {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+
+    </style>
+
+</head>
+<script>
+  {% for i in messages %}
+   alert('{{ i }} ')
+  {% endfor %}
+  </script>
+
+<body>
+  <!-- header -->
+  <header class="w3l-header">
+    <div class="hero-header-11">
+      <div class="hero-header-11-content">
+        <div class="container">
+          <nav class="navbar navbar-expand-xl navbar-light py-sm-2 py-1 px-0">
+            <a class="navbar-brand editContent" href="/admin_home/">ADMINISTRATOR</a>
+            <!-- if logo is image enable this
+				<a class="navbar-brand" href="#index.html">
+						<img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
+				</a> -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon fa fa-bars"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item ">
+                  <a class="nav-link" href="/admin_home/">HOME <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="/warehouse_stock/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    MANAGE LOG
+
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item " href="/restaurants_details/">RESTAURANTS</a>
+                    <a class="dropdown-item" href="/delivery_details/">DELIVERY</a>
+                    <a class="dropdown-item" href="/sustainability_details/">SUSTAINABILITY</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/upload_stock/">UPLOAD STOCK</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="/warehouse_stock/">WAREHOUSE</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="/warehouse_stock/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    REPORTS
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                    <a class="dropdown-item" href="/sus_report/">SUSTAIN REPORT</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/admin_logout/">LOGOUT</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- //header -->
+  <!--  Main banner section -->
+  <section class="w3l-main-banner">
+    <div class="companies20-content">
+      <div class="companies-wrapper">
+        <div class="item">
+
+
+          <li>
+            <div class="slider-info banner-view" >
+                         <div class="container">
+    <h2 style="color:white;margin-left: 310px;">WAREHOUSE STOCK DETAILS</h2>
+
+    <br>
+    <div class="table-container" style="max-height: 500px; overflow-y: auto;">
+        <table class="table-striped" style="margin: 0 auto; width: 100%;">
+            <thead>
+                <tr>
+                    <th>ITEM ID</th>
+                    <th>FOOD ITEM NAME</th>
+                    <th>FOOD PRICE(Rs)</th>
+                    <th>FOOD IMAGE</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in data %}
+                <tr>
+                    <td>{{ user.Br_id }}</td>
+                    <td>{{ user.food_name }}</td>
+                    <td>{{ user.price }}</td>
+                    <td>
+                        {% if user.image %}
+                        <a href="{{ user.image.url }}">
+                            <img src="{{ user.image.url }}" alt="Uploaded Image" style="height:100px;width:100px;">
+                        </a>
+                        {% else %}
+                        No image available
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+</div>
+              <div class="banner-info container">
+
+
+<!--                <h3 class="banner-text"><small>Hello, I’m</small><br>-->
+<!--                  Christopher-->
+<!--                </h3>-->
+<!--                <p class="my-4 mb-5">UI/UX Designer</p><br>-->
+<!--                <a href="#gallery" class="btn btn-primary theme-button mr-3">My Work</a>-->
+<!--                <a href="#about.html" class="btn btn-outline-primary theme-button">Hire Me</a>-->
+              </div>
+            </div>
+          </li>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--  //Main banner section -->
+  <!--  About section -->
+     <!-- /move top -->
+
+
+  <!-- Footer -->
+
+  <!-- jQuery and Bootstrap JS -->
+  <script src="assets/js/jquery-3.4.1.slim.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+
+  <!-- Template JavaScript -->
+  <script src="assets/js/jquery.magnific-popup.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.popup-with-zoom-anim').magnificPopup({
+        type: 'inline',
+
+        fixedContentPos: false,
+        fixedBgPos: true,
+
+        overflowY: 'auto',
+
+        closeBtnInside: true,
+        preloader: false,
+
+        midClick: true,
+        removalDelay: 300,
+        mainClass: 'my-mfp-zoom-in'
+      });
+
+      $('.popup-with-move-anim').magnificPopup({
+        type: 'inline',
+
+        fixedContentPos: false,
+        fixedBgPos: true,
+
+        overflowY: 'auto',
+
+        closeBtnInside: true,
+        preloader: false,
+
+        midClick: true,
+        removalDelay: 300,
+        mainClass: 'my-mfp-slide-bottom'
+      });
+    });
+  </script>
+
+  <!-- disable body scroll which navbar is in active -->
+  <script>
+    $(function () {
+      $('.navbar-toggler').click(function () {
+        $('body').toggleClass('noscroll');
+      })
+    });
+  </script>
+  <!-- disable body scroll which navbar is in active -->
+
+
+  <script src="assets/js/smartphoto.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const sm = new SmartPhoto(".js-img-viwer", {
+        showAnimation: false
+      });
+      // sm.destroy();
+    });
+  </script>
+
+
+</body>
+
+</html>
